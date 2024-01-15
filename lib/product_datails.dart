@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/global_variables.dart';
 
 class ProductDetails extends StatefulWidget {
   final Map<String, Object> product;
