@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/global_variables.dart';
 import 'package:shop_app/product_card.dart';
+import 'package:shop_app/product_datails.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -38,16 +39,16 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: Column(
           children: [
-            const Row(
+            Row(
               children: [
                 Padding(
-                  padding: EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.all(20.0),
                   child: Text(
                     "Shoes\nCollection",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ),
-                Expanded(
+                const Expanded(
                   child: TextField(
                     decoration: InputDecoration(
                       hintText: 'Search',
@@ -101,10 +102,22 @@ class _HomePageState extends State<HomePage> {
                 itemCount: products.length,
                 itemBuilder: (context, index) {
                   final product = products[index];
-                  return ProductCard(
-                    title: product['title'] as String,
-                    price: product['price'] as double,
-                    image: product['imageUrl'] as String,
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) {
+                          return ProductDetails(product: product);
+                        },
+                      ));
+                    },
+                    child: ProductCard(
+                      title: product['title'] as String,
+                      price: product['price'] as double,
+                      image: product['imageUrl'] as String,
+                      backGroundColor: index.isEven
+                          ? const Color.fromRGBO(245, 247, 249, 1)
+                          : const Color.fromRGBO(216, 240, 253, 1),
+                    ),
                   );
                 },
               ),
