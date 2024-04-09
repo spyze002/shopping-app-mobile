@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "825574940956",
+    "project_id": "market-place-16881",
+    "storage_bucket": "market-place-16881.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:825574940956:android:9733e31ab680f386475ad9",
+        "android_client_info": {
+          "package_name": "com.example.shop_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmE3C1FR7pPMXYq-moGiQnoQAxUtTmoLY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
